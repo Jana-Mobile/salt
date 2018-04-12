@@ -243,7 +243,9 @@ def present(
         notification_arn=None,
         notification_arn_from_pillar="boto_asg_notification_arn",
         notification_types=None,
-        notification_types_from_pillar="boto_asg_notification_types"):
+        notification_types_from_pillar="boto_asg_notification_types",
+        classic_link_vpc_id=None,
+        classic_link_vpc_security_groups=None):
     '''
     Ensure the autoscale group exists.
 

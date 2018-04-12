@@ -436,7 +436,8 @@ def create_launch_configuration(name, image_id, key_name=None,
                                 volume_type=None, delete_on_termination=True,
                                 iops=None, use_block_device_types=False,
                                 region=None, key=None, keyid=None,
-                                profile=None):
+                                profile=None,classic_link_vpc_id=None,
+                                classic_link_vpc_security_groups=None):
     '''
     Create a launch configuration.
 
@@ -470,7 +471,9 @@ def create_launch_configuration(name, image_id, key_name=None,
         ebs_optimized=ebs_optimized,
         associate_public_ip_address=associate_public_ip_address,
         volume_type=volume_type, delete_on_termination=delete_on_termination,
-        iops=iops, use_block_device_types=use_block_device_types)
+        iops=iops, use_block_device_types=use_block_device_types,
+        classic_link_vpc_id=classic_link_vpc_id,
+        classic_link_vpc_security_groups=classic_link_vpc_security_groups)
     try:
         conn.create_launch_configuration(lc)
         log.info('Created LC {0}'.format(name))
