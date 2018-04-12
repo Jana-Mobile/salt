@@ -125,7 +125,9 @@ def present(
         region=None,
         key=None,
         keyid=None,
-        profile=None):
+        profile=None,
+        classic_link_vpc_id=None,
+        classic_link_vpc_security_groups=None):
     '''
     Ensure the launch configuration exists.
 
@@ -233,7 +235,7 @@ def present(
             instance_monitoring, spot_price, instance_profile_name,
             ebs_optimized, associate_public_ip_address, volume_type,
             delete_on_termination, iops, use_block_device_types, region, key,
-            keyid, profile)
+            keyid, profile, classic_link_vpc_id, classic_link_vpc_security_groups)
         if created:
             ret['changes']['old'] = None
             ret['changes']['new'] = name
